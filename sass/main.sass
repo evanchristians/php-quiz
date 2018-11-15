@@ -1,28 +1,64 @@
 
-	$main: #0b7a75
+	$main: #6bd11d
+	$hilite: #2ed8db
 *
 	box-sizing: border-box	
 body 
-	padding: 1em
+	padding: 0
 	margin: 0
-	background-color: #ececec
+	background-color: #f3f3f3
 	font-size: 1rem
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-
+header
+	width: 100%
+	background-color: #fff
+	box-shadow: 0 1px 1px #44444420
 h1 
-	color: $main
+	color: $hilite
 	text-align: center
 	font-size: 4em
+	margin: 0
+	padding: 0.5em
 h2 
 	padding: 0 0 .5em 0
 	margin: 0
 	box-shadow: 0 2px 3px -3px #000
+	color: #333
 
 section 
 	max-width: 800px
 	padding: 0.75em
 	margin: 0 auto
 	width: 90%
+	p 
+		margin: 1em 1.4em
+.submit
+	outline: 2px solid #fff 
+	outline-offset: -6px
+	text-align: center
+	background-color: $hilite
+	h2 
+		transform: translateY(1em)
+		font-size: 3em
+		color: #fff 
+		box-shadow: none
+	input[type=submit]
+		cursor: pointer
+		margin: 3em auto
+		background-color: $hilite
+		border: none
+		border-radius: 5px
+		padding: 0.2em 0.75em 
+		font-size: 2em
+		color: #fff 
+		box-shadow: 0 1px 2px #44444400 
+		transition: all 200ms ease-in-out
+		border: 2px solid #fff
+		&:hover
+			box-shadow: 0 3px 5px #44444410
+			border: 2px solid transparent 
+			background-color: #fff 
+			color: $hilite 
 .box
 	font-size: 1.5em
 	background-color: #fff
@@ -33,24 +69,41 @@ section
 	display: grid
 	grid-template-columns: repeat(4, 1fr)
 	text-align: center
-	input[type=submit] 
-		border: none
-		font-size: 1.125em
-		display: block
+	text-transform: capitalize
+	p 
+		color: #333
+	// font-weight: 300
+	grid-gap: 10px
+	input[type=radio]
+		position: absolute
+		width: 0
+		height: 0
+		z-index: -999
+	input[type=radio]:checked + .option
 		background-color: $main
 		color: #fff 
-		border-radius: 2px
-		padding: 0.2em .5em
-		width: 80%
-		margin: 0 auto
+	.option
+		position: relative
+		cursor: pointer
+		border: none
+		display: block
+		z-index: 999
+		background-color: #f8f8f8
+		color: #333 
+		border-radius: 4px
+		padding: 0.2em 0
 		transition: all 200ms ease-in-out
+		box-shadow: 0 1px 2px #44444430
 		&:hover
-			background-color: #08605c
+			background-color: $hilite
+			color: #fff 
 
 .excellent
 	background-color: #0cce6b20
 	margin: 3em auto
 	border-radius: 3px
+	h1 
+		color: $main
 	p 
 		text-align: center
 		color: $main
@@ -80,3 +133,32 @@ section
 		color: #f7372a
 		padding: 1em 3em
 		font-size: 1.5em
+.num
+	background-color: $hilite
+	color: #fff 
+	display: inline-block
+	font-size: 0.9em
+	width: 1.5em
+	height: 1.5em
+	margin-left: 0.5em
+	text-align: center
+	line-height: 1.35em
+	border-radius: 50%
+	box-shadow: 0 1px 1px #44444440
+	&:nth-child(even)
+		background-color: $main
+
+
+
+@media (max-width: 768px)
+	.grid
+		grid-template-columns: repeat(2, 1fr)
+		width: 100%
+	section 
+		p 
+			margin: 1em 0.5em
+		h2 
+			text-align: center
+@media (max-width: 580px)
+	.grid
+		grid-template-columns: repeat(1, 1fr)

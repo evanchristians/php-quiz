@@ -7,76 +7,75 @@
 	<link rel="stylesheet" href="css/main.css">
 	<title>Riddles</title>
 </head>
-<body>
+<body id="test">
+	<header>
+		<h1>Riddle Me This!</h1>
+	</header>
 
-	<h1>Riddle Me This!</h1>
 
 <?php
 	$quizPieces = array(
 
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'correct' => 'the other')
+		array('q' => 'The more there is the less you see, what am I?', 'stars', 'clouds', 'darkness', 'dreams'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other')
 		
 	);
 	// var_dump($quizPieces);
 	// echo count($quizPieces);
 ?>
 <?php
-	for ($n = 1; $n < count($quizPieces); $n++) {
-	echo "
-		<section class='box'>
+	for ($i = 0; $i < count($quizPieces); $i++) { ?>
+
+	<section class='box'>
 			<h2>
-				Question";
-	echo $n;
-	echo "	 
+				Question <span class="num"> <?php echo $i+1 ?> </span>
 			</h2>
 			<p>
-				";
-	echo $quizPieces[$n]['q']; 
-			
-	echo "
+				<?php echo $quizPieces[$i]['q']; ?>
 			</p>
 			<form action='index.php'>
 			<section class='grid'>
-				<span><input type='submit' value='";
-				echo $quizPieces[$n][0];
-				echo "'></span>
-				<span><input type='submit' value='";
-				echo $quizPieces[$n][1]; 
-				echo "'></span>
-				<span><input type='submit' value='";
-				echo $quizPieces[$n][2];
-				echo "'></span>
-				<span><input type='submit' value='";
-				echo $quizPieces[$n][3];
-				echo "'></span>
+			<?php 
+				$x = 0;
+			for ($n = $i*4; $n < ($i+1)*4; $n++) { 
+
+				?>
+				<input type='radio' name='option' id="<?php echo $n ?>"><label class="option" for="<?php echo $n ?>"><?php echo $quizPieces[$i][$x] ?></label>
+			<?php
+					$x++; 
+		
+		} ?>
 			</section>
 			</form>
-
 		</section>
-	";
-	}
+
+	<?php }
 ?>
 
-
+	<section class="submit">
+		<h2>Submit Your Results!</h2>
+		<form action="index.php">
+			<input type="submit" value="Submit!">
+		</form>
+	</section>
 
 	<section class="excellent">
 		<h1>

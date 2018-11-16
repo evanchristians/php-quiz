@@ -18,7 +18,7 @@
 <?php
 	$quizPieces = array(
 
-		array('q' => 'Stand on me, youre not stable. Jump on me you\'re free as can be. Launch yourself at the right time and fly high! What am I?', 'a jetpack', 'a balance beam', 'a rocket', 'a trampoline'),
+		array('q' => 'Stand on me, you\'re not stable. Jump on me you\'re free as can be. Launch yourself at the right time and fly high! What am I?', 'a jetpack', 'a balance beam', 'a rocket', 'a trampoline'),
 		array('q' => 'I have eighty-eight keys, but cannot open a single door. What am I?', 'a fingerprint', 'a piano', 'a padlock', 'rubik\'s cube'),
 		array('q' => 'I get smaller every time I take a bath. What am I?', 'skin', 'soap', 'hair', 'a mirror'),
 		array('q' => 'It\'s got twists and turns, but has no curves. Twist it to fix it, turn it to ruin it. What is it?', 'spoon', 'ruler', 'fork', 'rubik\'s cube'),

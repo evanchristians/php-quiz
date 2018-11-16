@@ -22,14 +22,14 @@
 		array('q' => 'I have eighty-eight keys, but cannot open a single door. What am I?', 'a fingerprint', 'a piano', 'a padlock', 'rubik\'s cube'),
 		array('q' => 'I get smaller every time I take a bath. What am I?', 'skin', 'soap', 'hair', 'a mirror'),
 		array('q' => 'It\'s got twists and turns, but has no curves. Twist it to fix it, turn it to ruin it. What is it?', 'spoon', 'ruler', 'fork', 'rubik\'s cube'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'What is greater than God, more evil than the devil, the poor have it, the rich need it, and if you eat it, you\'ll die?', 'nothing', 'air', 'blood', 'gold'),
+		array('q' => 'Who makes it, has no need of it. Who buys it, has no use for it. Who uses it can neither see nor feel it. What is it?', 'kitchen utensils', 'boat', 'coffin', 'airplane'),
+		array('q' => 'What can travel around the world while staying in a corner?', 'air hostess', 'postage stamp', 'television', 'the internet'),
+		array('q' => 'You can drop me from the tallest building and I\'ll be fine, but if you drop me in water I die. What am I?', 'stone', 'diamond', 'titanium', 'paper'),
+		array('q' => 'What has a head and a tail, but no body?', 'bed', 'coin', 'snake', 'lizard'),
+		array('q' => 'What gets wetter and wetter the more it dries?', 'towel', 'well', 'soap', 'sponge'),
+		array('q' => 'Paul\'s height is six feet, he\'s an assistant at a butcher\'s shop, and wears size 9 shoes. What does he weigh?', 'meat', 'butcher', '70kg', 'nothing'),
+		array('q' => 'What kind of room has no doors or windows?', 'kitchen', 'greenhouse', 'computer', 'mushroom'),
 		array('q' => 'Which answer in this list is the correct answer to this question? <br><br>
 		1. All of the below. <br>
 		2. None of the below. <br>
@@ -46,8 +46,8 @@
 		D) 25%', 'a', 'b', 'c', 'd'),
 		array('q' => 'John has been hired to paint the numbers 1 through 100 on 100 apartments.	How many times will he have to paint 8?', '8', '20', '1', '64'),
 		array('q' => 'A tomato vine is 3 meters long. The bottom foot of the vine doesnt grow any tomatoes but the rest of the vine grows a tomato every 5 inches. How many vegetables can grow off of the vine?', '3', '0', '21', '5'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other')
+		array('q' => 'What gets broken without being held?', 'glass', 'a promise', 'chewing gum', 'brick'),
+		array('q' => 'The eight of us go forth not back to protect our king from a foes attack. What are we?', 'deck of cards', 'a mortgage', 'knights', 'chess pawns')
 		
 	);
 
@@ -73,6 +73,7 @@
 					$x++; 
 		
 		} ?>
+			<input type="radio" name="<?php echo $i; ?>" value="4" checked="checked">
 			</section>
 		</section>
 

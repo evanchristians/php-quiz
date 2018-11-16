@@ -34,7 +34,7 @@
 							<h1>
 								Congratulations
 							</h1>
-							<p></p>
+							<p>
 								This is excellent, however, even though you've just achieved a perfect score I'm sure Evan would have found some way to achieve better.
 							</p>
 						</section>

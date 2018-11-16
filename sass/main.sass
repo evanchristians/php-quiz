@@ -33,7 +33,7 @@ section
 	margin: 0 auto
 	width: 90%
 	p 
-		margin: 1em 1.4em
+		margin: 0.75em 1.4em
 .submit
 	outline: 2px solid #fff 
 	outline-offset: -6px
@@ -111,6 +111,9 @@ section
 		color: #2BA84A
 		padding: 1em 3em
 		font-size: 1.5em
+	.score
+		background-color: #2BA84A 
+
 
 .okay
 	background-color: #ffbb1120
@@ -123,6 +126,8 @@ section
 		color: #e8884c
 		padding: 1em 3em
 		font-size: 1.5em
+	.score
+		background-color: #e8884c
 
 .bad
 	background-color: #e3170a20
@@ -135,6 +140,8 @@ section
 		color: #f7372a
 		padding: 1em 3em
 		font-size: 1.5em
+	.score
+		background-color: #f7372a
 .num
 	background-color: $hilite
 	color: #fff 
@@ -149,7 +156,19 @@ section
 	box-shadow: 0 1px 1px #44444440
 	&:nth-child(even)
 		background-color: $main
-
+.score
+	transform: translateY(.5em)
+	font-weight: 700
+	display: flex
+	align-items: center
+	justify-content: center
+	margin: 0 auto
+	font-size: 2.4em
+	width: 3em
+	height: 3em
+	color: #fff
+	border-radius: 50%
+	box-shadow: 0 1px 1px #44444440
 
 
 @media (max-width: 768px)

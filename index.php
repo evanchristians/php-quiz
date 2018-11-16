@@ -12,6 +12,8 @@
 		<h1>Quizzed Off!</h1>
 	</header>
 
+	<form action='index.php' method="post">
+
 
 <?php
 	$quizPieces = array(
@@ -53,7 +55,7 @@
 	// echo count($quizPieces);
 ?>
 <?php
-	for ($i = 0; $i < 5; $i++) { ?>
+	for ($i = 0; $i < count($quizPieces); $i++) { ?>
 
 	<section class='box'>
 			<h2>
@@ -62,20 +64,18 @@
 			<p>
 				<?php echo $quizPieces[$i]['q']; ?>
 			</p>
-			<form action='index.php' method="post">
 			<section class='grid'>
 			<?php 
 				$x = 0;
 			for ($n = $i*4; $n < ($i+1)*4; $n++) { 
 
 				?>
-				<input type='radio' name="option" value="<?php echo $x ?>" id="<?php echo $n ?>"><label class="option" for="<?php echo $n ?>"><?php echo $quizPieces[$i][$x] ?></label>
+				<input type='radio' name="<?php echo $i; ?>" value="<?php echo $x ?>" id="<?php echo $n ?>"><label class="option" for="<?php echo $n ?>"><?php echo $quizPieces[$i][$x] ?></label>
 			<?php
 					$x++; 
 		
 		} ?>
 			</section>
-			</form>
 		</section>
 
 	<?php }
@@ -83,45 +83,88 @@
 
 	<section class="submit">
 		<h2>Submit Your Results!</h2>
-		<form action="index.php" method="post">
 			<input type="submit" value="Submit!">
-		</form>
 	</section>
-
-	<section class="excellent">
-		<h1>
-			Congratulations
-		</h1>
-		<p>
-			This is excellent, however, even though you've just achieved a perfect score I'm sure Evan would have found some way to achieve better.
-		</p>
-	</section>
-	<section class="okay">	
-		<h1>
-			Uhm...
-		</h1>
-		<p>
-			Somebody forgot to do their homework. This is terribly un-Evan-like of you.
-		</p>
-	</section>
-	<section class="bad">	
-		<h1>
-			Haha WOW!
-							
-		</h1>
-		<p>
-			This score is absolutely fucking terrible. I can't believe people like you have actually survived natural selection.		
-		</p>
-	</section>
+	</form>
 <?php
-// 	$results = array();
-// 	foreach ($answers as $answer) {
-// 			if ($inputs[$answer] == $answer) {
-// 				array_push($results, $answer);
-// 		}
-//  }
-//  var_dump($results);
-var_dump($_POST);
+	if (isset($_POST)) {
+		$results = array();
+		$count=0;
+		foreach ($answers as $answer) {
+	
+				if ($_POST[$count] == $answer) {
+					array_push($results, $answer);
+			}
+			$count++;
+	 }
+	 $total = count($results);
+		switch ($total) {
+			case ($total >= 16) :
+				?>
+					<section class="excellent">
+						<div class="score"><?php echo $total; ?></div>
+						<h1>
+							Congratulations
+						</h1>
+						<p></p>
+							This is excellent, however, even though you've just achieved a perfect score I'm sure Evan would have found some way to achieve better.
+						</p>
+					</section>
+				<?php
+				break;
+			
+			case ($total >= 10 && $total < 16):
+				?>
+					<section class="okay">	
+						<div class="score"><?php echo $total; ?></div>
+
+						<h1>
+							Uhm...
+						</h1>
+						<p>
+							Somebody forgot to do their homework. This is terribly un-Evan-like of you.
+						</p>
+					</section>
+				<?php
+				break;
+			
+			case ($total < 10 && $total >= 5):
+				?>
+					<section class="bad">	
+						<div class="score"><?php echo $total; ?>/20</div>
+
+						<h1>
+							IDK...
+											
+						</h1>
+						<p>
+							Ugh, are you even trying?		
+						</p>
+					</section>
+				<?php
+				break;
+			
+			case ($total < 5):
+				?>
+					<section class="bad">	
+						<div class="score"><?php echo $total; ?>/20</div>
+
+						<h1>
+							Haha, what?!
+											
+						</h1>
+						<p>
+							This score is absolutely f***ing terrible. I can't believe people like you have actually survived natural selection.		
+						</p>
+					</section>
+				<?php
+				break;
+			
+			default:
+				?> <div class="error">Something</div> <?php
+				break;
+		}
+	}
 ?>
 </body>
 </html>

@@ -12,12 +12,24 @@
 		<h1>Quizzed Off!</h1>
 	</header>
 
-	<form action='index.php' method="post">
+	<form action='results.php' method="post">
 
 
 <?php
 	$quizPieces = array(
 
+		array('q' => 'Stand on me, youre not stable. Jump on me you\'re free as can be. Launch yourself at the right time and fly high! What am I?', 'a jetpack', 'a balance beam', 'a rocket', 'a trampoline'),
+		array('q' => 'I have eighty-eight keys, but cannot open a single door. What am I?', 'a fingerprint', 'a piano', 'a padlock', 'rubik\'s cube'),
+		array('q' => 'I get smaller every time I take a bath. What am I?', 'skin', 'soap', 'hair', 'a mirror'),
+		array('q' => 'It\'s got twists and turns, but has no curves. Twist it to fix it, turn it to ruin it. What is it?', 'spoon', 'ruler', 'fork', 'rubik\'s cube'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
+		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
 		array('q' => 'Which answer in this list is the correct answer to this question? <br><br>
 		1. All of the below. <br>
 		2. None of the below. <br>
@@ -35,24 +47,10 @@
 		array('q' => 'John has been hired to paint the numbers 1 through 100 on 100 apartments.	How many times will he have to paint 8?', '8', '20', '1', '64'),
 		array('q' => 'A tomato vine is 3 meters long. The bottom foot of the vine doesnt grow any tomatoes but the rest of the vine grows a tomato every 5 inches. How many vegetables can grow off of the vine?', '3', '0', '21', '5'),
 		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
-		array('q' => 'what is this?', 'this', 'that', 'them', 'the other'),
 		array('q' => 'what is this?', 'this', 'that', 'them', 'the other')
 		
 	);
-	$answers = array('1', '3', '1', '2', '1')
-	// var_dump($quizPieces);
-	// echo count($quizPieces);
+
 ?>
 <?php
 	for ($i = 0; $i < count($quizPieces); $i++) { ?>
@@ -86,85 +84,6 @@
 			<input type="submit" value="Submit!">
 	</section>
 	</form>
-<?php
-	if (isset($_POST)) {
-		$results = array();
-		$count=0;
-		foreach ($answers as $answer) {
-	
-				if ($_POST[$count] == $answer) {
-					array_push($results, $answer);
-			}
-			$count++;
-	 }
-	 $total = count($results);
-		switch ($total) {
-			case ($total >= 16) :
-				?>
-					<section class="excellent">
-						<div class="score"><?php echo $total; ?></div>
-						<h1>
-							Congratulations
-						</h1>
-						<p></p>
-							This is excellent, however, even though you've just achieved a perfect score I'm sure Evan would have found some way to achieve better.
-						</p>
-					</section>
-				<?php
-				break;
-			
-			case ($total >= 10 && $total < 16):
-				?>
-					<section class="okay">	
-						<div class="score"><?php echo $total; ?></div>
 
-						<h1>
-							Uhm...
-						</h1>
-						<p>
-							Somebody forgot to do their homework. This is terribly un-Evan-like of you.
-						</p>
-					</section>
-				<?php
-				break;
-			
-			case ($total < 10 && $total >= 5):
-				?>
-					<section class="bad">	
-						<div class="score"><?php echo $total; ?>/20</div>
-
-						<h1>
-							IDK...
-											
-						</h1>
-						<p>
-							Ugh, are you even trying?		
-						</p>
-					</section>
-				<?php
-				break;
-			
-			case ($total < 5):
-				?>
-					<section class="bad">	
-						<div class="score"><?php echo $total; ?>/20</div>
-
-						<h1>
-							Haha, what?!
-											
-						</h1>
-						<p>
-							This score is absolutely f***ing terrible. I can't believe people like you have actually survived natural selection.		
-						</p>
-					</section>
-				<?php
-				break;
-			
-			default:
-				?> <div class="error">Something</div> <?php
-				break;
-		}
-	}
-?>
 </body>
 </html>

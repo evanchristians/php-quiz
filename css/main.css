@@ -41,8 +41,14 @@ section {
 section p {
   margin: 0.75em 1.4em;
 }
+section span {
+  letter-spacing: 2px;
+  font-size: 0.5em;
+  transform: translateY(0.4em);
+}
 
 .submit {
+  margin-bottom: 3em;
   outline: 2px solid #fff;
   outline-offset: -6px;
   text-align: center;
@@ -173,14 +179,16 @@ section p {
 }
 
 .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: #4DBBCC;
   color: #fff;
-  display: inline-block;
   font-size: 0.9em;
-  width: 1.5em;
-  height: 1.5em;
+  transform: translateY(-0.1em);
+  width: 1.8em;
+  height: 1.8em;
   margin-left: 0.5em;
-  text-align: center;
   line-height: 1.35em;
   border-radius: 50%;
   box-shadow: 0 1px 1px #44444440;

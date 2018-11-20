@@ -37,7 +37,7 @@
 												
 							</h1>
 							<p>
-								Ugh... Are you even trying?
+								You can do much better, try again!
 							</p>
 						</section>
 					<?php
@@ -49,10 +49,10 @@
 							<div class="score"><?php echo $total; ?><span>/20</span></div>
 
 							<h1>
-								Oof!											
+								Keep Trying!											
 							</h1>
 							<p>
-								Maybe you should try a little harder next time.	
+								You have a lot more in you, go for it again!	
 							</p>
 						</section>
 					<?php
@@ -64,10 +64,10 @@
 							<div class="score"><?php echo $total; ?><span>/20</span></div>
 
 							<h1>
-								Uhm...
+								Great!
 							</h1>
 							<p>
-								Somebody forgot to do their homework. This is terribly un-Evan-like of you.
+								Respectable score, however I believe you can do much better!
 							</p>
 						</section>
 					<?php
@@ -81,7 +81,7 @@
 								Congratulations
 							</h1>
 							<p>
-								This is excellent, however, even though you've just achieved a perfect score I'm sure Evan would have found some way to achieve better.
+								This is excellent, I knew you could do it!
 							</p>
 						</section>
 					<?php

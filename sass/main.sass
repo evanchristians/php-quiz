@@ -1,6 +1,9 @@
-$main: #F6AE2D
-$hilite: #4DBBCC
-
+$main: #00B2FF
+$lMain: #56E39F
+$hMain: #188260
+$white: #ffffff
+$black: #161925
+$grey: #6D6A75
 *
 	box-sizing: border-box	
 body 
@@ -16,7 +19,7 @@ header
 	box-shadow: 0 1px 1px #44444420
 	text-align: center
 h1 
-	color: $hilite
+	color: $lMain
 	text-align: center
 	font-size: 4em
 	margin: 0
@@ -28,7 +31,7 @@ h2
 	color: #333
 
 section 
-	max-width: 800px
+	max-width: 1080px
 	padding: 0.75em
 	margin: 0 auto
 	width: 90%
@@ -43,7 +46,7 @@ section
 	outline: 2px solid #fff 
 	outline-offset: -6px
 	text-align: center
-	background-color: $hilite
+	background-color: $lMain
 	h2 
 		transform: translateY(1em)
 		font-size: 3em
@@ -52,7 +55,7 @@ section
 	input[type=submit]
 		cursor: pointer
 		margin: 3em auto
-		background-color: $hilite
+		background-color: $lMain
 		border: none
 		border-radius: 5px
 		padding: 0.2em 0.75em 
@@ -65,7 +68,7 @@ section
 			box-shadow: 0 3px 5px #44444410
 			border: 2px solid transparent 
 			background-color: #fff 
-			color: $hilite 
+			color: $lMain 
 .box
 	font-size: 1.5em
 	background-color: #fff
@@ -98,11 +101,11 @@ section
 		background-color: #f8f8f8
 		color: #333 
 		border-radius: 4px
-		padding: 0.2em 0
+		padding: 0.4em 0
 		transition: all 200ms ease-in-out
 		box-shadow: 0 1px 2px #44444430
 		&:hover
-			background-color: $hilite
+			background-color: $lMain
 			color: #fff 
 
 .excellent
@@ -152,7 +155,7 @@ section
 	display: inline-flex
 	align-items: center
 	justify-content: center
-	background-color: $hilite
+	background-color: $lMain
 	color: #fff 
 	font-size: 0.9em
 	transform: translateY(-.1em)

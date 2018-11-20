@@ -212,9 +212,9 @@ section span {
   box-shadow: 0 1px 1px #44444440;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 940px) {
   body {
-    font-size: 0.75em;
+    font-size: 0.85em;
   }
 
   .grid {
@@ -231,16 +231,16 @@ section span {
 }
 @media (max-width: 580px) {
   body {
-    font-size: 0.6em;
+    font-size: 0.7em;
   }
 
   .grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-@media (max-width: 420px) {
+@media (max-width: 440px) {
   body {
-    font-size: 0.45em;
+    font-size: 0.65em;
   }
 }
 

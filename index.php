@@ -7,14 +7,34 @@
 	<link rel="stylesheet" href="css/main.css">
 	<title>Riddles</title>
 </head>
+<audio id="audio" src="aud/click.aif" ></audio>
+<script>
+
+	function stopRKey(evt) { 
+		var evt = (evt) ? evt : ((event) ? event : null); 
+		var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
+		if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
+	} 
+
+	document.onkeypress = stopRKey; 
+
+
+  function play(){
+       var audio = document.getElementById("audio");
+       audio.play();
+			 console.log("works");
+                 }								 
+</script>
+
 <body id="test">
 	<header>
 		<h1>Quizzed Off!</h1>
 	</header>
 
 	<form action='results.php' method="post">
-
-
+		<section class="intro">
+			Hey ,<article class="name"><input autocomplete="off" type="text" name="name" id="name" placeholder="(your name)"><span></span></article> !<br><br> Prepare your mind for an unambiguously objective test of your intellegence. Good luck, have fun.
+		</section>
 <?php
 	$quizPieces = array(
 
@@ -170,7 +190,7 @@
 		array(
 		// QUESTIONS
 			
-		'q' => 'If 1 = 5, 2 = 10, 3 = 15 and 4 = 20, what is 5 equal to?', 
+		'q' => 'If 1 = 5, <br>2 = 10, <br>3 = 15 and <br>4 = 20, <br>what is 5 equal to?', 
 		// ANSWERS
 
 		'25', 
@@ -267,7 +287,7 @@
 			for ($n = $i*4; $n < ($i+1)*4; $n++) { 
 
 				?>
-				<input type='radio' name="<?php echo $i; ?>" value="<?php echo $x ?>" id="<?php echo $n ?>"><label class="option" for="<?php echo $n ?>"><?php echo $quizPieces[$i][$x] ?></label>
+				<input type='radio' name="<?php echo $i; ?>" value="<?php echo $x ?>" id="<?php echo $n ?>"><label class="option" for="<?php echo $n ?>" onclick="play()"><?php echo $quizPieces[$i][$x] ?></label>
 			<?php
 					$x++; 
 		
@@ -284,6 +304,7 @@
 			<input type="submit" value="Submit!">
 	</section>
 	</form>
+
 
 </body>
 </html>

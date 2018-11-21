@@ -33,7 +33,7 @@
 							<div class="score"><?php echo $total; ?><span>/20</span></div>
 
 							<h1>
-								Come On!
+								Come On, <?php echo $_POST['name'] ?>
 												
 							</h1>
 							<p>
@@ -52,7 +52,7 @@
 								Keep Trying!											
 							</h1>
 							<p>
-								You have a lot more in you, go for it again!	
+								You have a lot more in you <?php echo $_POST['name'] ?>, go for it again!	
 							</p>
 						</section>
 					<?php
@@ -64,7 +64,7 @@
 							<div class="score"><?php echo $total; ?><span>/20</span></div>
 
 							<h1>
-								Great!
+								Great stuff <?php echo $_POST['name'] ?>!
 							</h1>
 							<p>
 								Respectable score, however I believe you can do much better!
@@ -78,7 +78,7 @@
 						<section class="excellent">
 							<div class="score"><?php echo $total; ?><span>/20</span></div>
 							<h1>
-								Congratulations
+								Holy Moley <?php echo $_POST['name'] ?>!
 							</h1>
 							<p>
 								This is excellent, I knew you could do it!

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,24 +9,8 @@
 	<link rel="stylesheet" href="css/main.css">
 	<title>Riddles</title>
 </head>
-<audio id="audio" src="aud/click.aif" ></audio>
-<script>
-
-	function stopRKey(evt) { 
-		var evt = (evt) ? evt : ((event) ? event : null); 
-		var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
-		if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
-	} 
-
-	document.onkeypress = stopRKey; 
-
-
-  function play(){
-       var audio = document.getElementById("audio");
-       audio.play();
-			 console.log("works");
-                 }								 
-</script>
+<audio id="audio" src="aud/click1.wav" ></audio>
+<script src="js/main.js"></script>
 
 <body id="test">
 	<header>
@@ -33,10 +19,10 @@
 
 	<form action='results.php' method="post">
 		<section class="intro">
-			Hey ,<article class="name"><input autocomplete="off" type="text" name="name" id="name" placeholder="(your name)"><span></span></article> !<br><br> Prepare your mind for an unambiguously objective test of your intellegence. Good luck, have fun.
+			Hey ,<article class="name"><input autocomplete="off" type="text" name="name" id="name" placeholder="(type your name)"><span></span></article> !<br> Prepare your mind for an unambiguously objective test of your intellegence. Good luck, have fun.
 		</section>
 <?php
-	$quizPieces = array(
+	$_SESSION['quizPieces'] = $quizPieces = array(
 
 		array(
 		// QUESTIONS
@@ -47,7 +33,8 @@
 		'a jetpack', 
 		'a balance beam', 
 		'a rocket', 
-		'a trampoline'
+		'a trampoline',
+		'none'
 	),
 		array(
 		// QUESTIONS
@@ -58,7 +45,8 @@
 		'a fingerprint', 
 		'a piano', 
 		'a padlock', 
-		'rubik\'s cube'
+		'rubik\'s cube',
+		'none'
 	),
 		array(
 		// QUESTIONS
@@ -69,7 +57,9 @@
 		'skin', 
 		'soap', 
 		'hair', 
-		'a mirror'
+		'a mirror',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -80,7 +70,9 @@
 		'spoon', 
 		'ruler', 
 		'fork', 
-		'rubik\'s cube'
+		'rubik\'s cube',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -91,7 +83,9 @@
 		'nothing', 
 		'air', 
 		'blood', 
-		'gold'
+		'gold',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -102,7 +96,9 @@
 		'kitchen utensils', 
 		'boat', 
 		'coffin', 
-		'airplane'
+		'airplane',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -113,7 +109,9 @@
 		'air hostess', 
 		'postage stamp', 
 		'television', 
-		'the internet'
+		'the internet',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -124,7 +122,9 @@
 		'stone', 
 		'diamond', 
 		'titanium', 
-		'paper'
+		'paper',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -135,7 +135,9 @@
 		'bed', 
 		'coin', 
 		'snake', 
-		'lizard'
+		'lizard',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -146,7 +148,9 @@
 		'towel', 
 		'well', 
 		'soap', 
-		'sponge'
+		'sponge',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -157,7 +161,9 @@
 		'meat', 
 		'butcher', 
 		'70kg', 
-		'nothing'
+		'nothing',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -168,7 +174,9 @@
 		'kitchen', 
 		'greenhouse', 
 		'computer', 
-		'mushroom'
+		'mushroom',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -185,7 +193,9 @@
 		'6', 
 		'5', 
 		'3', 
-		'7'
+		'7',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -196,7 +206,9 @@
 		'25', 
 		'5', 
 		'50', 
-		'1'
+		'1',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -207,7 +219,9 @@
 		'robber', 
 		'candle', 
 		'age', 
-		'river'
+		'river',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -222,7 +236,9 @@
 		'a', 
 		'b', 
 		'c', 
-		'd'
+		'd',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -233,7 +249,9 @@
 		'8', 
 		'20', 
 		'1', 
-		'64'
+		'64',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -244,7 +262,9 @@
 		'3', 
 		'0', 
 		'21', 
-		'5'
+		'5',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -255,7 +275,9 @@
 		'glass', 
 		'a promise', 
 		'chewing gum', 
-		'brick'
+		'brick',
+		'none'
+
 	),
 		array(
 		// QUESTIONS
@@ -266,7 +288,10 @@
 		'deck of cards', 
 		'a mortgage', 
 		'knights', 
-		'chess pawns')
+		'chess pawns',
+		'none'
+
+		)
 		
 	);
 

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,19 +13,19 @@
 	<header>
 		<h1>Quizzed Off!</h1>
 	</header>
+	
 <?php
 	$answers = array('3', '1', '1', '3', '0', '2', '1', '3', '1', '0', '0', '3', '1', '3', '1', '2', '1', '1', '1', '3');
-
-	$count=0;
+	$corrections = array('3', '1', '1', '3', '0', '2', '1', '3', '1', '0', '0', '3', '1', '3', '1', '2', '1', '1', '1', '3');
 
 	if (isset($_POST)) {
 		$results = array();
-		foreach ($answers as $answer) {
+		foreach ($answers as $count => $answer) {
 	
 				if ($_POST[$count] == $answer) {
 					array_push($results, $answer);
 				}
-				$count++;
+			}
 	 	}
 		$total = count($results);
 			switch ($total) {
@@ -78,7 +80,7 @@
 						<section class="excellent">
 							<div class="score"><?php echo $total; ?><span>/20</span></div>
 							<h1>
-								Holy Moley <?php echo $_POST['name'] ?>!
+								Well Done, <?php echo $_POST['name'] ?>!
 							</h1>
 							<p>
 								This is excellent, I knew you could do it!
@@ -86,9 +88,27 @@
 						</section>
 					<?php
 					break;
+		}
+?>
+<?php 
+	if ($total < 20) {
+		?> <h1 class="wrong">Here are the correct answers for the questions you got wrong</h1> <?php
+		foreach ($corrections as $key => $correction) {
+			if ($_POST[$key] != $correction) {
+					?>
+					<section class="box">
+					<h2>
+						Question <span class="num"> <?php echo $key+1 ?> </span> <span class="green">Correction</span>
+					</h2>
+					<p>
+						<?php echo $_SESSION['quizPieces'][$key]['q'];?>
+					</p>
+					<div class="incorrect">Your Answer: <?php echo $_SESSION['quizPieces'][$key][$_POST[$key]] ?></div>
+					<div class="correct">Correct Answer: <?php echo $_SESSION['quizPieces'][$key][$correction] ?></div>
+					</section>
 
-				
-
+					<?php
+			}
 		}
 	}
 ?>

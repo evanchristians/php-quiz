@@ -11,7 +11,8 @@
 </head>
 <body>
 	<header>
-		<h1>Quizzed Off!</h1>
+		<h1>Are You A Qu<span>?</span>zard</h1>
+		<h2>or<?php echo $_SESSION['msg'][rand(0, count($_SESSION['msg'])-1)]?><span>?</span></h2>
 	</header>
 	
 <?php
@@ -92,7 +93,10 @@
 ?>
 <?php 
 	if ($total < 20) {
-		?> <h1 class="wrong">Here are the correct answers for the questions you got wrong</h1> <?php
+		?> <h1 class="activate" id="acti">Click Here</h1> 
+			 <h1 class="wrong" id="wrong">to view the correct answers</h1> 
+			<div class="hide" id="hide">		
+		<?php
 		foreach ($corrections as $key => $correction) {
 			if ($_POST[$key] != $correction) {
 					?>
@@ -110,6 +114,7 @@
 					<?php
 			}
 		}
+		?> </div> <?php
 	}
 ?>
 
@@ -120,6 +125,10 @@
 		
 		</form>
 	</section>
+	<!-- <div class="scroll" id="scroll">scroll down</div> -->
+
+	<script src="js/main.js"></script>
+
 	
 </body>
 </html>

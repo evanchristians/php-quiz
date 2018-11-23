@@ -212,8 +212,9 @@ section span {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1.2em auto;
-  font-size: 2.4em;
+  margin: 2em auto;
+  margin-top: 0;
+  font-size: 4em;
   width: 3em;
   height: 3em;
   color: #fff;
@@ -250,12 +251,13 @@ input[type=text]:focus ~ span {
   text-align: center;
   margin-top: 2em;
   padding: 0;
-  font-size: 2.5em;
+  font-size: 2em;
   line-height: 1.7em;
   background-color: #555555;
   font-weight: 400;
   color: #fff;
   box-shadow: 0 0 30px #4444440f;
+  overflow: hidden;
 }
 
 .name {
@@ -263,12 +265,28 @@ input[type=text]:focus ~ span {
   display: block;
   font-size: 2em;
   background-color: #00B2FF;
-  margin: 1em 0;
+  margin: 0;
+  margin-bottom: 1em;
   padding: 0.5em;
   width: 100%;
-  animation: blink 1s ease-in-out infinite;
 }
-.name span {
+
+#myProgress {
+  width: 40%;
+  background-color: #fff;
+  margin: 5em auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px #44444440;
+}
+
+#myBar {
+  width: 1%;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #00B2FF;
+  box-shadow: 0 0 60px #00B2FF70;
+}
+#myBar span {
   padding: 0;
   position: absolute;
   top: -20px;
@@ -353,7 +371,10 @@ input[type=text]:focus ~ span {
 
 .title {
   font-size: 1.6em;
-  padding-top: 1em;
+  padding: 1em 0;
+  background-color: #888;
+  color: #fff;
+  margin: 0;
 }
 
 .greeting {
@@ -384,6 +405,15 @@ input[type=text]:focus ~ span {
     transform: translateX(-50%);
   }
 }
+.percent {
+  color: #555555;
+  font-size: 2em;
+  font-weight: 800;
+  margin: 0 auto;
+  text-align: center;
+  transform: translateY(-2em);
+}
+
 @media (max-width: 940px) {
   body {
     font-size: 0.7em;

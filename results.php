@@ -34,7 +34,10 @@
 ?>
 					<section class="bad">	
 						<div class="score"><?php echo $total; ?><span>/20</span></div>
-
+						<div id="myProgress">
+							<div id="myBar"></div>
+						</div>
+						<div class="percent" id="percent">%</div>
 						<h1>
 							Come On, <?php echo $_POST['name']; ?>
 											
@@ -50,7 +53,10 @@
 				?>
 					<section class="bad">	
 						<div class="score"><?php echo $total; ?><span>/20</span></div>
-
+						<div id="myProgress">
+							<div id="myBar"></div>
+						</div>
+						<div class="percent" id="percent">%</div>
 						<h1>
 							Keep Trying!											
 						</h1>
@@ -65,7 +71,10 @@
 				?>
 					<section class="okay">	
 						<div class="score"><?php echo $total; ?><span>/20</span></div>
-
+						<div id="myProgress">
+							<div id="myBar"></div>
+						</div>
+						<div class="percent" id="percent">%</div>
 						<h1>
 							Great stuff <?php echo $_POST['name'] ?>!
 						</h1>
@@ -80,6 +89,10 @@
 				?>
 					<section class="excellent">
 						<div class="score"><?php echo $total; ?><span>/20</span></div>
+						<div id="myProgress">
+							<div id="myBar"></div>
+						</div>
+						<div class="percent" id="percent">%</div>
 						<h1>
 							Well Done, <?php echo $_POST['name'] ?>!
 						</h1>
@@ -125,8 +138,28 @@
 		
 		</form>
 	</section>
-
+<?php
+	$percent = ($total / 20) * 100;
+?>
 	<script src="js/main.js"></script>
+	<script>
+
+		window.onload = function move() {
+			var elem = document.getElementById("myBar"); 
+			var width = 1;
+			var id = setInterval(frame, 13);
+			function frame() {
+					if (width >= <?php echo $percent; ?>) {
+							clearInterval(id);
+					} else {
+							width++; 
+							document.getElementById("percent").innerHTML = width+"%";
+							elem.style.width = width + '%'; 
+					}
+			}
+		}
+
+	</script>
 
 	
 </body>

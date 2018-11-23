@@ -13,17 +13,17 @@
 <script src="js/main.js"></script>
 <?php 
 $_SESSION['msg'] = array(
-	" is it just me",
+	" do you use Angular for frontend",
 	" are you a quater pounder with cheese, extra mayo",
-	" qu?zard a you are",
+	" are you a flat-earther",
 	" is this is a randomly generated message",
-	" do you play minecraft",
-	" are you already tracer",
-	" will you follow me on instagram @_evanchristians",
-	" do you say 'who's jesse?'",
-	" do you say 'like' a lot",
+	" do you hold your fork in your right hand",
+	" are you a league player",
+	" do you echo your HTML",
+	" do you use internal CSS",
+	" if so, who did 9/11",
 	" are you a quitter",
-	" follow @jessedilgee for unlimited swag"
+	" are you in the JavaScript stream"
 	)
 
 ?>
@@ -35,7 +35,10 @@ $_SESSION['msg'] = array(
 
 	<form action='results.php' method="post">
 		<section class="intro">
-			Hey ,<article class="name"><input autocomplete="off" type="text" name="name" id="name" placeholder="(type your name)"><span></span></article> !<br> Prepare your mind for an unambiguously objective test of your intellegence. Good luck, have fun.
+			<p class="title">Greetings!</p>
+			
+			<article class="name"><input autocomplete="off" type="text" name="name" id="name" placeholder="(type your name)"><span></span></article>
+			<p class="greeting"> Prepare your mind for an unambiguously objective test of your intellegence. Good luck, have fun. </p>
 		</section>
 <?php
 	$_SESSION['quizPieces'] = $quizPieces = array(

@@ -7,6 +7,7 @@ window.addEventListener('scroll', function(){
 
 document.getElementById("acti").onclick = function() {
 	document.getElementById("hide").style.display = "block";
+	document.getElementById("hide").style.opacity = "1";
 	document.getElementById("wrong").style.display = "none";
 	document.getElementById("acti").style.display = "none";
 	console.log("mad");

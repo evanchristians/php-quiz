@@ -28,69 +28,69 @@
 				}
 			}
 	 	}
-		$total = count($results);
-			switch ($total) {
-				case ($total < 5):
-					?>
-						<section class="bad">	
-							<div class="score"><?php echo $total; ?><span>/20</span></div>
-
-							<h1>
-								Come On, <?php echo $_POST['name'] ?>
-												
-							</h1>
-							<p>
-								You can do much better, try again!
-							</p>
-						</section>
-					<?php
-					break;
-
-				case ($total < 10 && $total >= 5):
-					?>
-						<section class="bad">	
-							<div class="score"><?php echo $total; ?><span>/20</span></div>
-
-							<h1>
-								Keep Trying!											
-							</h1>
-							<p>
-								You have a lot more in you <?php echo $_POST['name'] ?>, go for it again!	
-							</p>
-						</section>
-					<?php
-					break;
-				
-				case ($total >= 10 && $total < 16):
-					?>
-						<section class="okay">	
-							<div class="score"><?php echo $total; ?><span>/20</span></div>
-
-							<h1>
-								Great stuff <?php echo $_POST['name'] ?>!
-							</h1>
-							<p>
-								Respectable score, however I believe you can do much better!
-							</p>
-						</section>
-					<?php
-					break;
-
-				case ($total >= 16) :
-					?>
-						<section class="excellent">
-							<div class="score"><?php echo $total; ?><span>/20</span></div>
-							<h1>
-								Well Done, <?php echo $_POST['name'] ?>!
-							</h1>
-							<p>
-								This is excellent, I knew you could do it!
-							</p>
-						</section>
-					<?php
-					break;
-		}
+	$total = count($results);
+		switch ($total) {
+			case ($total < 5):
 ?>
+					<section class="bad">	
+						<div class="score"><?php echo $total; ?><span>/20</span></div>
+
+						<h1>
+							Come On, <?php echo $_POST['name']; ?>
+											
+						</h1>
+						<p>
+							You can do much better, try again!
+						</p>
+					</section>
+				<?php
+				break;
+
+			case ($total < 10 && $total >= 5):
+				?>
+					<section class="bad">	
+						<div class="score"><?php echo $total; ?><span>/20</span></div>
+
+						<h1>
+							Keep Trying!											
+						</h1>
+						<p>
+							You have a lot more in you <?php echo $_POST['name']; ?>, go for it again!	
+						</p>
+					</section>
+				<?php
+				break;
+			
+			case ($total >= 10 && $total < 16):
+				?>
+					<section class="okay">	
+						<div class="score"><?php echo $total; ?><span>/20</span></div>
+
+						<h1>
+							Great stuff <?php echo $_POST['name'] ?>!
+						</h1>
+						<p>
+							Respectable score, however I believe you can do much better!
+						</p>
+					</section>
+				<?php
+				break;
+
+			case ($total >= 16) :
+				?>
+					<section class="excellent">
+						<div class="score"><?php echo $total; ?><span>/20</span></div>
+						<h1>
+							Well Done, <?php echo $_POST['name'] ?>!
+						</h1>
+						<p>
+							This is excellent, I knew you could do it!
+						</p>
+					</section>
+				<?php
+				break;
+		}
+				?>
 <?php 
 	if ($total < 20) {
 		?> <h1 class="activate" id="acti">Click Here</h1> 
@@ -125,7 +125,6 @@
 		
 		</form>
 	</section>
-	<!-- <div class="scroll" id="scroll">scroll down</div> -->
 
 	<script src="js/main.js"></script>
 

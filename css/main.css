@@ -222,7 +222,7 @@ section span {
 }
 
 ::placeholder {
-  color: #555555;
+  color: #fff;
 }
 
 input[type=text] {
@@ -234,45 +234,64 @@ input[type=text] {
   position: relative;
   border: none;
   transition: all 300ms ease-out;
+  background-color: transparent;
   border-radius: 2px;
-  color: #00B2FF;
+  color: #fff;
+  font-family: "Raleway";
 }
 input[type=text]:focus {
   outline: none;
 }
 input[type=text]:focus ~ span {
-  border-color: #00B2FF;
+  width: 60%;
 }
 
 .intro {
   text-align: center;
   margin-top: 2em;
-  padding: 3em 5em;
-  font-size: 2em;
+  padding: 0;
+  font-size: 2.5em;
   line-height: 1.7em;
-  background-color: #ffffff;
+  background-color: #555555;
+  font-weight: 400;
+  color: #fff;
   box-shadow: 0 0 30px #4444440f;
 }
 
 .name {
   position: relative;
-  display: inline-block;
-  padding: 0;
+  display: block;
+  font-size: 2em;
+  background-color: #00B2FF;
+  margin: 1em 0;
+  padding: 0.5em;
+  width: 100%;
+  animation: blink 1s ease-in-out infinite;
 }
 .name span {
   padding: 0;
-  margin: 0 0.5em;
   position: absolute;
-  top: 0;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: 0%;
   height: 100%;
-  border-bottom: 1px solid #666;
+  border-bottom: 2px solid #fff;
   transition: all 300ms ease-out;
   z-index: 0;
 }
 
+@keyframes blink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .correct {
   background-color: #00B2FF;
   color: #fff;
@@ -332,6 +351,25 @@ input[type=text]:focus ~ span {
   transition: opacity 300ms ease-out;
 }
 
+.title {
+  font-size: 1.6em;
+  padding-top: 1em;
+}
+
+.greeting {
+  padding-bottom: 2em;
+}
+.greeting:after {
+  content: '"';
+  color: #00B2FF;
+  font-size: 1.5em;
+}
+.greeting:before {
+  content: '"';
+  color: #00B2FF;
+  font-size: 1.5em;
+}
+
 @keyframes bounce {
   0% {
     opacity: 0.7;
@@ -361,6 +399,9 @@ input[type=text]:focus ~ span {
   }
   section h2 {
     text-align: center;
+  }
+  section input[type=text] {
+    font-size: 0.8em;
   }
 }
 @media (max-width: 580px) {

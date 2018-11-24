@@ -12,6 +12,9 @@
 <audio id="audio" src="aud/click1.wav" ></audio>
 <script src="js/main.js"></script>
 <?php 
+
+// RANDOM GREETING MESSAGE DATABASE
+
 $_SESSION['msg'] = array(
 	" do you use Angular for frontend",
 	" are you a quater pounder with cheese, extra mayo",
@@ -27,11 +30,14 @@ $_SESSION['msg'] = array(
 	)
 
 ?>
+
 <body id="test">
 	<header>
 		<h1>Are You A Qu<span>?</span>zard</h1>
 		<h2>or<?php echo $_SESSION['msg'][rand(0, count($_SESSION['msg'])-1)]?><span>?</span></h2>
 	</header>
+
+<!-- NAME INPUT SPACE FOR MESSAGE AT RESULTS PAGE -->
 
 	<form action='results.php' method="post">
 		<section class="intro">
@@ -41,6 +47,9 @@ $_SESSION['msg'] = array(
 			<p class="greeting"> Prepare your mind for an unambiguously objective test of your intellegence. Good luck, have fun. </p>
 		</section>
 <?php
+
+// QUESTION AND ANSWER DATABASE
+
 	$_SESSION['quizPieces'] = $quizPieces = array(
 
 		array(
@@ -306,6 +315,7 @@ $_SESSION['msg'] = array(
 
 ?>
 <?php
+// DISPLAYS A SECTION FOR EACH QUESTION
 	for ($i = 0; $i < count($quizPieces); $i++) { ?>
 
 	<section class='box'>
@@ -318,6 +328,7 @@ $_SESSION['msg'] = array(
 			<section class='grid'>
 			<?php 
 				$x = 0;
+				// DISPLAYS THE FOUR ANSWERS PER EACH QUESTION
 			for ($n = $i*4; $n < ($i+1)*4; $n++) { 
 
 				?>
@@ -326,13 +337,16 @@ $_SESSION['msg'] = array(
 					$x++; 
 		
 		} ?>
-			<input type="radio" name="<?php echo $i; ?>" value="4" checked="checked">
+			
+			<!-- Hidden Defaule Input - records anser as 'none' -->
+				<input type="radio" name="<?php echo $i; ?>" value="4" checked="checked">
 			</section>
 		</section>
 
 	<?php }
 ?>
 
+<!-- form submission -->
 	<section class="submit">
 		<h2>Submit Your Results!</h2>
 			<input type="submit" value="Submit!">

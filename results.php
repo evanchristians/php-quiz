@@ -16,7 +16,11 @@
 	</header>
 	
 <?php
+
+	// This array is to count correct answers
 	$answers = array('3', '1', '1', '3', '0', '2', '1', '3', '1', '0', '0', '3', '1', '3', '1', '2', '1', '1', '1', '3');
+
+	// This array is to display incorrect answers
 	$corrections = array('3', '1', '1', '3', '0', '2', '1', '3', '1', '0', '0', '3', '1', '3', '1', '2', '1', '1', '1', '3');
 
 	if (isset($_POST)) {
@@ -29,6 +33,7 @@
 			}
 	 	}
 	$total = count($results);
+		//  Displays a Message based on results class
 		switch ($total) {
 			case ($total < 5):
 ?>
@@ -104,7 +109,11 @@
 				break;
 		}
 				?>
+
 <?php 
+
+	// Displays Incorrect Answers along with their Corrections
+
 	if ($total < 20) {
 		?> <h1 class="activate" id="acti">Click Here</h1> 
 			 <h1 class="wrong" id="wrong">to view the correct answers</h1> 
@@ -131,6 +140,8 @@
 	}
 ?>
 
+<!-- Button TO Retake The Quiz -->
+
 	<section class="submit">
 		<form action="index.php" method="post">
 		<h2>Retake Test</h2>
@@ -143,6 +154,8 @@
 ?>
 	<script src="js/main.js"></script>
 	<script>
+
+	// An Animated Percentage Bar
 
 		window.onload = function move() {
 			var elem = document.getElementById("myBar"); 

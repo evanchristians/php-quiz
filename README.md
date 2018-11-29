@@ -1,9 +1,9 @@
 # Quizzed Off!
 ## Description
-```
-Quizzed Off! is a PHP-handeled quiz website. The quiz is made up of 20 riddles. The user chooses
+
+Quizzed Off! is a PHP-handled quiz built to excersize my knowledge of PHP loops and arrays. The quiz is made up of 20 riddles. The user chooses
 one correct answer out of a possible four for each question.
-```
+
 
 ## Getting Started
 
@@ -30,19 +30,13 @@ Take the quiz
 - **Visual Studio Code**  - https://code.visualstudio.com/download
 - **Dart (SASS)**  - https://sass-lang.com/dart-sass
 
-## Learning
-```
-This project taught the skills to setup and call elements in a basic database 
-using PHP functions and arrays.
-
-I learnt how to use PHP within HTML elements and JavaScript methods and how to use 
-for loops to write HTML and manipulate frontend elements.
-
-I used switch statements and random functions to build a stimulating and interactive
+## What I've learnt
+This project taught the skills to setup and call elements in a _basic database_ 
+using **PHP** functions and arrays.
+I've learnt how to use **PHP** within **HTML** elements and **JavaScript** methods. I've learnt how to use _for loops_ to compile **HTML** and manipulate frontend elements.
+I used _switch statements_ and _random functions_ to build a stimulating and interactive
 user experience.
 
-I would like to improve my code's efficiency in the future.
-```
 
 ## Built with
 

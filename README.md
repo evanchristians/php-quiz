@@ -5,12 +5,30 @@ Quizzed Off! is a PHP-handeled quiz website. The quiz is made up of 20 riddles. 
 one correct answer out of a possible four for each question.
 ```
 
-## Setting up my workspace
+## Getting Started
 
-- Created Repoisitory
-- Opened terminal and launched the command 'git clone "repo link"'
-- Created base folder structure (css, img)
-- Pushed Changes
+Clone Repository
+```
+git clone https://github.com/evanryk/php-quiz.git
+```
+Create a Virtual Host **(WAMP)**
+```
+Address Bar : localhost/ 
+	> Add Virtual Host 
+		> *Project Folder Absolute Path* 
+			> WAMP tray : refresh
+			 	> Address Bar : localhost/(virtual host name)/
+```
+Take the quiz
+
+### Prerequisites
+
+#### For depoloyment
+- **WAMP** - http://www.wampserver.com/en/
+- **Any Web Browser** 
+#### For editting
+- **Visual Studio Code**  - https://code.visualstudio.com/download
+- **Dart (SASS)**  - https://sass-lang.com/dart-sass
 
 ## Learning
 ```
@@ -26,7 +44,7 @@ user experience.
 I would like to improve my code's efficiency in the future.
 ```
 
-## ICT
+## Built with
 
 |**Technologies**|**Languages**|**Tools**|
 |:-----------:|:------------:|:------------:|
@@ -36,5 +54,5 @@ I would like to improve my code's efficiency in the future.
 | SASS        | | Github
 
 
-## Contributors
-Evan Christians
+## Authors
+- Evan Christians - _Main Contributor_

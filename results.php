@@ -33,7 +33,7 @@
 			}
 	 	}
 	$total = count($results);
-	$total = 20;
+
 		//  Displays a Message based on results class
 		switch ($total) {
 			case ($total < 5):

@@ -33,6 +33,7 @@
 			}
 	 	}
 	$total = count($results);
+	$total = 20;
 		//  Displays a Message based on results class
 		switch ($total) {
 			case ($total < 5):
@@ -90,7 +91,7 @@
 				<?php
 				break;
 
-			case ($total >= 16) :
+			case ($total >= 16 && $total < 20) :
 				?>
 					<section class="excellent">
 						<div class="score"><?php echo $total; ?><span>/20</span></div>
@@ -103,6 +104,24 @@
 						</h1>
 						<p>
 							This is excellent, I knew you could do it!
+						</p>
+					</section>
+				<?php
+				break;
+
+			case ($total == 20) :
+				?>
+					<section class="perfect">
+						<div class="score"><?php echo $total; ?><span>/20</span></div>
+						<div id="myProgress">
+							<div id="myBar"></div>
+						</div>
+						<div class="percent" id="percent">%</div>
+						<h1>
+							PERFECT SCORE! <?php echo $_POST['name'] ?>!
+						</h1>
+						<p>
+							Your intellect is unmatched! Go collect your bragging rights at reception.
 						</p>
 					</section>
 				<?php
@@ -141,6 +160,14 @@
 ?>
 
 <!-- Button TO Retake The Quiz -->
+<?php if ($total>=20) { ?>
+	<div class="dance">
+		<img src="img/dance.gif" alt="">
+	</div>
+<?php
+}
+	$percent = ($total / 20) * 100;
+?>
 
 	<section class="submit">
 		<form action="index.php" method="post">
@@ -149,9 +176,6 @@
 		
 		</form>
 	</section>
-<?php
-	$percent = ($total / 20) * 100;
-?>
 	<script src="js/main.js"></script>
 	<script>
 
@@ -162,7 +186,11 @@
 			var width = 1;
 			var id = setInterval(frame, 13);
 			function frame() {
-					if (width >= <?php echo $percent; ?>) {
+					if (width == 100) {
+							elem.style.backgroundColor = "#FFD700";
+							elem.style.animation = "growing 1s ease-in-out infinite";
+							clearInterval(id);
+					} else if (width >= <?php echo $percent; ?>) {
 							clearInterval(id);
 					} else {
 							width++; 

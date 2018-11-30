@@ -1,5 +1,4 @@
 $main: #00B2FF
-// $lMain: #56E39F
 $lMain: #555555
 $hMain: #188260
 $white: #ffffff
@@ -82,7 +81,7 @@ section
 			background-color: #fff 
 			color: $lMain 
 .box
-	font-size: 1.5em
+	font-size: 1.8em
 	background-color: #fff
 	margin: 1.5em auto
 	box-shadow: 0 0 30px #4444440f
@@ -96,7 +95,6 @@ section
 	grid-gap: 1em
 	p 
 		color: #333
-	// font-weight: 300
 
 	input[type=radio]
 		position: absolute
@@ -124,7 +122,6 @@ section
 			color: #fff 
 
 .excellent
-	// background-color: #0cce6b20
 	margin: 3em auto
 	border-radius: 3px
 	h1 
@@ -140,7 +137,6 @@ section
 
 
 .okay
-	// background-color: #ffbb1120
 	margin: 3em auto
 
 	h1 
@@ -154,7 +150,6 @@ section
 		background-color: #e8884c
 
 .bad
-	// background-color: #e3170a20
 	margin: 3em auto
 
 	h1 
@@ -212,8 +207,6 @@ input[type=text]
 	border: none
 	transition: all 300ms ease-out
 	background-color: transparent
-	// padding: .25em .5em
-	// margin: 0 .5em
 	border-radius: 2px
 	color: #fff
 	font-family: 'Raleway'
@@ -221,12 +214,8 @@ input[type=text]
 
 	&:focus
 		& ~ span
-			// border-color: $main
 			width: 60%
-
-		// color: #fff
 		outline: none
-		// background-color: $lMain
 
 .intro
 	text-align: center
@@ -255,18 +244,15 @@ input[type=text]
 	background-color: #fff 
 	margin: 5em auto
 	border-radius: 10px
-	// box-shadow: 0 1px 1px #44444440
 
 #myBar 
 	width: 1%
 	height: 10px
 	border-radius: 10px
 	background-color: $main
-	// box-shadow: 0 0 60px #00B2FF20
-
+	transition: background-color 200ms ease-out
 	span 
 		padding: 0
-		// margin: 0 0.5em
 		position: absolute
 		top: -20px
 		left: 50%
@@ -276,6 +262,16 @@ input[type=text]
 		border-bottom: 2px solid #fff
 		transition: all 300ms ease-out
 		z-index: 0
+
+@keyframes growing 
+	0%
+		transform: scale(1)
+	50%
+		transform: scale(1.05)
+	100%
+		transform: scale(1)
+
+
 @keyframes blink
 	0%
 		transform: scale(1)		
@@ -310,7 +306,6 @@ input[type=text]
 	margin: 2em auto
 	margin-bottom: 6em
 	font-size: 2.5em
-	// width: 600px
 	line-height: 1.6em
 
 .hide 
@@ -334,6 +329,19 @@ input[type=text]
 	font-size: 1.2em
 	transition: opacity 300ms ease-out
 
+.perfect
+	margin: 3em auto
+
+	h1 
+		color: #FFD700
+	p 
+		text-align: center
+		color: #FFD700
+		padding: 1em 3em
+		font-size: 2em
+	.score
+		background-color: #FFD700
+
 
 .title
 	font-size: 1.6em
@@ -344,7 +352,6 @@ input[type=text]
 
 .greeting 
 	padding-bottom: 2em
-	// font-style: italic
 	&:after
 		content: '"'
 		color: $main
@@ -353,6 +360,17 @@ input[type=text]
 		content: '"'
 		color: $main
 		font-size: 1.5em
+
+.dance
+	display: flex
+	justify-content: center
+	align-items: center
+	width: fit-content
+	overflow: hidden
+	width: 35em
+	height: 35em
+	margin: 0 auto
+	border-radius: 50%
 @keyframes bounce 
 	0% 
 		opacity: 0.7

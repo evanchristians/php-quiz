@@ -92,7 +92,7 @@ section span {
 }
 
 .box {
-  font-size: 1.5em;
+  font-size: 1.8em;
   background-color: #fff;
   margin: 1.5em auto;
   box-shadow: 0 0 30px #4444440f;
@@ -283,6 +283,7 @@ input[type=text]:focus ~ span {
   height: 10px;
   border-radius: 10px;
   background-color: #00B2FF;
+  transition: background-color 200ms ease-out;
 }
 #myBar span {
   padding: 0;
@@ -297,6 +298,17 @@ input[type=text]:focus ~ span {
   z-index: 0;
 }
 
+@keyframes growing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes blink {
   0% {
     transform: scale(1);
@@ -367,6 +379,22 @@ input[type=text]:focus ~ span {
   transition: opacity 300ms ease-out;
 }
 
+.perfect {
+  margin: 3em auto;
+}
+.perfect h1 {
+  color: #FFD700;
+}
+.perfect p {
+  text-align: center;
+  color: #FFD700;
+  padding: 1em 3em;
+  font-size: 2em;
+}
+.perfect .score {
+  background-color: #FFD700;
+}
+
 .title {
   font-size: 1.6em;
   padding: 1em 0;
@@ -387,6 +415,18 @@ input[type=text]:focus ~ span {
   content: '"';
   color: #00B2FF;
   font-size: 1.5em;
+}
+
+.dance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  overflow: hidden;
+  width: 35em;
+  height: 35em;
+  margin: 0 auto;
+  border-radius: 50%;
 }
 
 @keyframes bounce {

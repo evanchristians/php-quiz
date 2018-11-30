@@ -1,32 +1,44 @@
 # Quizzed Off!
 ## Description
-```
-Quizzed Off! is a PHP-handeled quiz website. The quiz is made up of 20 riddles. The user chooses
+
+Quizzed Off! is a PHP-handled quiz built to excersize my knowledge of PHP loops and arrays. The quiz is made up of 20 riddles. The user chooses
 one correct answer out of a possible four for each question.
+
+
+## Getting Started
+
+Clone Repository
 ```
-
-## Setting up my workspace
-
-- Created Repoisitory
-- Opened terminal and launched the command 'git clone "repo link"'
-- Created base folder structure (css, img)
-- Pushed Changes
-
-## Learning
+git clone https://github.com/evanryk/php-quiz.git
 ```
-This project taught the skills to setup and call elements in a basic database 
-using PHP functions and arrays.
+Create a Virtual Host **(WAMP)**
+```
+Address Bar : localhost/ 
+	> Add Virtual Host 
+		> *Project Folder Absolute Path* 
+			> WAMP tray : refresh
+			 	> Address Bar : localhost/(virtual host name)/
+```
+Take the quiz
 
-I learnt how to use PHP within HTML elements and JavaScript methods and how to use 
-for loops to write HTML and manipulate frontend elements.
+### Prerequisites
 
-I used switch statements and random functions to build a stimulating and interactive
+#### For depoloyment
+- **WAMP** - http://www.wampserver.com/en/
+- **Any Web Browser** 
+#### For editting
+- **Visual Studio Code**  - https://code.visualstudio.com/download
+- **Dart (SASS)**  - https://sass-lang.com/dart-sass
+
+## What I've learnt
+This project taught the skills to setup and call elements in a _basic database_ 
+using **PHP** functions and arrays.
+I've learnt how to use **PHP** within **HTML** elements and **JavaScript** methods. I've learnt how to use _for loops_ to compile **HTML** and manipulate frontend elements.
+I used _switch statements_ and _random functions_ to build a stimulating and interactive
 user experience.
 
-I would like to improve my code's efficiency in the future.
-```
 
-## ICT
+## Built with
 
 |**Technologies**|**Languages**|**Tools**|
 |:-----------:|:------------:|:------------:|
@@ -36,5 +48,5 @@ I would like to improve my code's efficiency in the future.
 | SASS        | | Github
 
 
-## Contributors
-Evan Christians
+## Authors
+- Evan Christians - _Main Contributor_

@@ -4,7 +4,6 @@
 Quizzed Off! is a PHP-handled quiz built to excersize my knowledge of PHP loops and arrays. The quiz is made up of 20 riddles. The user chooses
 one correct answer out of a possible four for each question.
 
-
 ## Getting Started
 
 Clone Repository
@@ -21,6 +20,9 @@ Address Bar : localhost/
 ```
 Take the quiz
 
+### Deployment
+Live Site: <a href = "https://evanchristians-php-quiz.herokuapp.com/">PHP Quiz</a> 
+
 ### Prerequisites
 
 #### For depoloyment
@@ -29,6 +31,8 @@ Take the quiz
 #### For editting
 - **Visual Studio Code**  - https://code.visualstudio.com/download
 - **Dart (SASS)**  - https://sass-lang.com/dart-sass
+
+
 
 ## What I've learnt
 This project taught the skills to setup and call elements in a _basic database_ 

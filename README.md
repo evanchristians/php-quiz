@@ -21,7 +21,7 @@ Address Bar : localhost/
 Take the quiz
 
 ### Deployment
-Live Site: <a href = "https://evanchristians-php-quiz.herokuapp.com/">PHP Quiz</a> 
+Live Site: <a href = "https://evanchristians-php-quiz.herokuapp.com/" target="_blank">PHP Quiz</a> 
 
 ### Prerequisites
 
